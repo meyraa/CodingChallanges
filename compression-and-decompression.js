@@ -68,11 +68,10 @@ class DecompressStack {
 	}
 	
 	handleOpenBracket() {
-		if (this.lastInputWasNumber) {
-			this.lastInputWasNumber = false;
-		} else {
-			this.addMultiplier(0);
+		if (!this.lastInputWasNumber) {
+			this.addMultiplier(1);
 		}
+		this.lastInputWasNumber = false;
 	}
 	
 	addMultiplier(multiplier) {
